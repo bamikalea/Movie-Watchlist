@@ -128,7 +128,7 @@ button#search-btn{
     font-size: 1.5rem;
     font-weight: 600;
     position: absolute;
-    top: 50%;
+    top: 40%;
 }
 
 .empty-state>img{
