@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>Movie Watchlist</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Find your film</h1>
+            <a href="watchlist.html">my watchlist</a>
+        </header>
+
+        <form class="search-bar" id="search-bar" >
+            <img src="img/Search-icon.svg" alt="Search-icon">
+            <input id="search-input" type="text" placeholder="Search a movie" required>
+            <button id="search-btn">Search</button>
+        </form>
+
+        <main class="content" id="content">
+            <div class="empty-state" id="empty-state">
+                <img src="img/movie-Icon.svg" alt="movie-icon">
+                <p>Start exploring</p>
+            </div>
+            
+        </main>
+    </div>
+    
+</body>
+</html>

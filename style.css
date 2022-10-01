@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "inter", sans-serif;
+}
+
+body{
+    color: #fff;
+}
+
+img{
+    width: 100%;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+a{
+    text-decoration: underline;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.wrapper{
+    background-color: hsla(0, 0%, 7%, 1);
+    max-width: 750px;
+    width: 70%;
+    min-height: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+    /* Header */
+
+header{
+    height: 200px;
+    background-image: url(img/banner-image.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3em;
+}
+
+header>h1{
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+
+/* ======== Search Movie Page ======== */
+
+
+    /* Form  */
+
+form{
+    display: flex;
+    max-height: 80px;
+    width: 80%;
+    background: hsla(240, 1%, 18%, 1);
+    color: #fff;
+    box-shadow: 0px 1px 2px 0px hsla(0, 0%, 0%, 0.05);
+    padding-left: .5em;
+    margin: -20px auto 0;
+    border-radius: 5px;
+    z-index: 999999;
+}
+
+form>img{
+    max-width: 20px;
+    margin-right: .5em;
+}
+
+#search-input{
+    background: hsla(0, 0%, 30%, 0);
+    color: #fff;
+    width: 80%;
+    border: none;
+    padding: 0 .2em;
+}
+
+#search-input::placeholder{
+    color: hsla(0, 0%, 65%, 1);
+}
+
+#search-input:focus,
+#search-input:active{
+    outline: none;
+}
+
+button#search-btn{
+    background: hsla(0, 0%, 30%, 1);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 1em 3em;
+    font-weight: 500;
+}
+
+.content{
+    padding: 0 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+    margin: 2.5em 0;
+}
+
+
+    /* Empty state */
+
+.empty-state{
+    /* display: none; */
+    color: hsla(240, 1%, 18%, 1);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: absolute;
+    top: 30%;
+}
+
+.empty-state>img{
+    max-width: 80px;
+}
+
+
+/* Movie List */
+
+.movie-item{
+    border-bottom: 1.5px solid hsla(0, 0%, 17%, 1);
+    padding: 2em 0;
+    align-self: flex-start;
+}
+
+.movie-item:last-child{
+    border: none;
+}
+
+.movie-poster{
+    width: 40%;
+    max-width: 100px;
+    background-color: hsla(0, 0%, 17%, 1);
+}
+
+.movie-details {
+    justify-content: space-between;
+    margin-left: 1em;
+    font-size: 1rem;
+}
+
+.movie-details img{
+    max-width: 20px;
+    margin-right: .2em;
+}
+
+.movie-details h4{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-right: .5em;
+}
+
+.movie-details p{
+    font-weight: 300;
+}
+
+.movie-tags p{
+    font-size: .9rem;
+}
+
+.genre{
+    margin: 1em 2em;
+    justify-content: space-between;
+}
+
+.add-to-watchlist-btn,
+.remove-from-watchlist-btn{
+    cursor: pointer;
+}
+
+.plot{
+    color: hsla(0, 0%, 65%, 1);
+    line-height: 1.6em;
+    padding-right: 3em;
+    font-size: 1rem;
+}
+
+
+/* ======== My Wishlist page ======== */
+
+
+    /* Empty state */
+
+.watchlist-empty-state{
+    text-align: center;
+    margin: 10em auto;
+    
+}
+
+.watchlist-empty-state h4{
+    color: hsla(0, 0%, 47%, 1);
+    font-size: 1.5rem;
+    margin-bottom: .5em;
+}
+
+.watchlist-empty-state a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.watchlist-empty-state a > img{
+    max-width: 15px;
+    margin-right: .2em;
+}
