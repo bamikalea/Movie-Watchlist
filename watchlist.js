@@ -1,8 +1,11 @@
 const contentEl = document.getElementById("content")
+const removeModalEl = document.getElementById("remove-overlay")
+
 let data = JSON.parse(localStorage.getItem("savedMovies"))
 
+
 function renderSavedMovies(){
-    if (data){
+    if (data.length > 0){
         contentEl.innerHTML = ""
         for (let movie of data){
             let html =`
@@ -28,12 +31,15 @@ function renderSavedMovies(){
                     </div>
                 </div>`
             contentEl.innerHTML += html
+            }
+        } else if (data.length < 1) {
+            contentEl.innerHTML = ` 
+            <div class="watchlist-empty-state">
+                <h4>Your watchlist is looking a little empty...</h4>
+                <a href="index.html" ><img src="img/add-Icon.svg" alt="add-icon">Let’s add some movies!</a>
+            </div>`
         }
-    } else contentEl.innerHTML = ` 
-        <div class="watchlist-empty-state">
-            <h4>Your watchlist is looking a little empty...</h4>
-            <a href="index.html" ><img src="img/add-Icon.svg" alt="add-icon">Let’s add some movies!</a>
-        </div>`
+
 }
 
 renderSavedMovies()
@@ -42,4 +48,13 @@ function removeMovie(itemId){
     data.splice(itemId, 1)
     localStorage.setItem("savedMovies", JSON.stringify(data))
     renderSavedMovies()
+    showModal()
+    console.log(data)
+}
+
+function showModal(){
+    removeModalEl.style.display ="block"
+    setTimeout( () => {
+        removeModalEl.style.display ="none"
+    }, 2000) 
 }

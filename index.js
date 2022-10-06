@@ -71,7 +71,7 @@ function showModal(){
     modalEl.style.display ="block"
     setTimeout( () => {
         modalEl.style.display ="none"
-    }, 2000) 
+    }, 1500) 
 }
 
 formEl.addEventListener("submit", (e)=>{
