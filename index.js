@@ -4,6 +4,7 @@ const emptyStateEl = document.getElementById("empty-state")
 const searchEl = document.getElementById("search-input")
 const formEl = document.getElementById("search-bar")
 const addBtnEl = document.querySelector(".add-to-watchlist-btn")
+const modalEl = document.getElementById("overlay")
 
 let searchedMovies = []
 let savedMovies = []
@@ -63,8 +64,15 @@ async function addToWatchlist(arg){
     savedMovies.unshift(data) //add selection to the begining of array
     const unique = [...new Map(savedMovies.map((m) => [m.imdbID, m])).values()]; //remove duplicate movies
     localStorage.setItem("savedMovies", JSON.stringify(unique))  //save to local storage
+    showModal()
 }
 
+function showModal(){
+    modalEl.style.display ="block"
+    setTimeout( () => {
+        modalEl.style.display ="none"
+    }, 2000) 
+}
 
 formEl.addEventListener("submit", (e)=>{
     e.preventDefault()
